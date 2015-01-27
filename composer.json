@@ -1,0 +1,33 @@
+{
+	"name" : "mouf/silex-stackphp",
+	"description" : "This package provides a StackPHP middleware that can be used to plug a Silex application",
+	"type" : "library",
+	"authors" : [{
+			"name" : "David Négrier",
+			"email" : "d.negrier@thecodingmachine.com",
+			"homepage" : "http://mouf-php.com"
+		}
+	],
+	"keywords" : [
+		"stackphp",
+        "stack",
+		"silex"
+	],
+	"homepage" : "https://github.com/thecodingmachine/silex-stackphp",
+	"license" : "MIT",
+	"require" : {
+		"php" : ">=5.4.0",
+		"symfony/http-kernel" : "~2.0",
+		"silex/silex" : "~1.0"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Mouf\\StackPhp\\" : "src/"
+		}
+	},
+	"extra" : {
+		"mouf" : {
+			"logo" : "logo.png"
+		}
+	}
+}
