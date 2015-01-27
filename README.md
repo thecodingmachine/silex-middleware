@@ -8,7 +8,7 @@ instead of sending a 404 response if nothing is found, the next middleware on th
 Installation
 ------------
 
-Through [Composer](https://getcomposer.org/) as [mouf/silex-stackphp](https://packagist.org/packages/mouf/silex-stackphp).
+Through [Composer](https://getcomposer.org/) as [mouf/silex-middleware](https://packagist.org/packages/mouf/silex-middleware).
 
 Usage
 -----
