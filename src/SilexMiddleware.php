@@ -30,7 +30,10 @@ class SilexMiddleware implements HttpKernelInterface
 		$this->silex = $silex;
 		$this->silex->error(function(\Exception $e, $code) use ($app) {
 			if ($code == 404) {
-				return $app->handle($this->request, $this->type, $this->catch);
+				$response = $app->handle($this->request, $this->type, $this->catch);
+				// Let's force the return code of the response into HttpKernel:
+				$response->headers->set('X-Status-Code', $response->getStatusCode());
+				return $response;				
 			} else {
 				return;
 			}
