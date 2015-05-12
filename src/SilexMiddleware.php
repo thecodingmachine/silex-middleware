@@ -37,7 +37,7 @@ class SilexMiddleware implements HttpKernelInterface
 			} else {
 				if (!$this->catch) {
 					// If we are not to catch the exception, let's rethrow it.
-					throw new $e;
+					throw $e;
 				}
 				return;
 			}
