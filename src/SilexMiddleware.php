@@ -35,6 +35,10 @@ class SilexMiddleware implements HttpKernelInterface
 				$response->headers->set('X-Status-Code', $response->getStatusCode());
 				return $response;				
 			} else {
+				if (!$this->catch) {
+					// If we are not to catch the exception, let's rethrow it.
+					throw new $e;
+				}
 				return;
 			}
 		});
@@ -48,6 +52,6 @@ class SilexMiddleware implements HttpKernelInterface
 		$this->type = $type;
 		$this->catch = $catch;
 		
-		return $this->silex->handle($request, $type, $catch);
+		return $this->silex->handle($request, $type, true);
 	}
 }
